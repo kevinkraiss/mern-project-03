@@ -19,6 +19,12 @@ const userSchema = new Schema({
         required: 'A password is required',
         minLength: 8
     },
+    place: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Place',
+        }
+    ]
 })
 
 userSchema.pre('save', async function(next) {

@@ -1,3 +1,4 @@
+const Place = require('./place')
 const User = require('./user')
 
-module.exports = { User }
+module.exports = { User, Place }
