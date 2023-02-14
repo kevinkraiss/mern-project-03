@@ -1,4 +1,4 @@
-const { Schema, model } = reqiore('mongoose')
+const { Schema, model } = require('mongoose')
 
 const receiptSchema = new Schema({
     spent: {
@@ -9,8 +9,9 @@ const receiptSchema = new Schema({
         type: Date,
         default: Date.now
     },
-    location: {
-        type: String,
+    place: {
+        type: SchemaTypes.ObjectId,
+        ref:"place",
         required: true
     }
 })
