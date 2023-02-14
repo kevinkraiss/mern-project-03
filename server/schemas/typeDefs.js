@@ -12,7 +12,7 @@ const typeDefs = `
 
     type Receipt {
         _id: ID
-        spent: Int
+        spent: Float
         purchaseDate: String
         location: String
     }
@@ -26,28 +26,33 @@ const typeDefs = `
 
     type Query {
         user(_id: ID!): User
+        place(_id: ID!): Place
+        receipt(_id: ID!): Receipt
     }
 
     type Mutation {
         login(email: String, password: String!): Auth
-        addPlace: {
+        
+        addPlace(
             _id: ID
             name: String
             formatted_address: String
             editorial_summary: String
-        }
-        addReceipt: {
+        ): Place
+
+        addReceipt(
             _id: ID
             spent: Int
             purchaseDate: String
             place: [String]
-    }
+        ): Receipt
 
         addUser(
             username: String!
             email: String!
             password: String!
         ): User
+
     }
 `
 module.exports = typeDefs
