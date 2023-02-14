@@ -8,6 +8,8 @@ const resolvers = require('./schemas/resolvers')
 const { authMiddleware } = require('./utils/auth')
 const auth = require('./utils/auth')
 
+
+
 const PORT = process.env.PORT || 3001
 const app = express()
 
@@ -24,14 +26,17 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'client', 'build', 'index.html'))
 })
 
+
 connection.once('open', async () => {
     await apolloServer.start()
     app.use('/graphql', expressMiddleware(apolloServer, {
         context: authMiddleware
     }))
 
+
     app.listen(PORT, () => {
         console.log(`Express server listening on http://localhost:${PORT}`)
         console.log(`Apollo GraphQl playground available at http://localhost:${PORT}/graphql`)
     })
+   
 })
