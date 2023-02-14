@@ -8,13 +8,14 @@ const typeDefs = `
         _id: ID
         username: String
         email: String
+        receipts: [Receipt]
     }
 
     type Receipt {
         _id: ID
         spent: Float
         purchaseDate: String
-        location: String
+        place: String
     }
 
     type Place {
@@ -26,7 +27,9 @@ const typeDefs = `
 
     type Query {
         user(_id: ID!): User
+        users: [User]
         place(_id: ID!): Place
+        places: [Place]
         receipt(_id: ID!): Receipt
     }
 
@@ -34,17 +37,18 @@ const typeDefs = `
         login(email: String, password: String!): Auth
         
         addPlace(
-            _id: ID
-            name: String
+            _id: ID!
+            name: String!
             formatted_address: String
             editorial_summary: String
         ): Place
 
         addReceipt(
             _id: ID
+            user: String!
             spent: Int
-            purchaseDate: String
-            place: [String]
+            purchaseDate: String!
+            place: String!
         ): Receipt
 
         addUser(

@@ -13,6 +13,11 @@ const receiptSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref:"place",
         required: true
+    },
+    user: {
+        type: Schema.Types.ObjectId,
+        ref:"user",
+        required: true
     }
 })
 

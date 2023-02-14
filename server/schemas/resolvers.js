@@ -4,14 +4,20 @@ const { signToken } = require('../utils/auth')
 
 const resolvers = {
     Query: {
-        user: async (parent, args, context, info) => {
+        users: async (parent, args, context, info) => {
             return await User.find()
         },
+        user: async (parent, args, context, info) => {
+            return await User.findById(args._id).populate('receipts')
+        },
         place: async (parent, args, context, info) => {
+            return await Place.findById(args._id)
+        },
+        places: async (parent, args, context, info) => {
             return await Place.find()
         },
         receipt: async (parent, args, context, info) => {
-            return await Receipt.find()
+            return await Receipt.findById(args._id)
         },
     },
     Mutation: {

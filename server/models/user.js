@@ -19,6 +19,12 @@ const userSchema = new Schema({
         required: 'A password is required',
         minLength: 8
     },
+    receipts: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Receipt'
+        }
+    ]
    
 })
 
