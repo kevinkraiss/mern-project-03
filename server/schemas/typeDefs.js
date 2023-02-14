@@ -10,6 +10,13 @@ const typeDefs = `
         email: String
     }
 
+    type Receipt {
+        _id: ID
+        spent: Int
+        purchaseDate: String
+        location: String
+    }
+
     type Query {
         user(_id: ID!): User
     }
