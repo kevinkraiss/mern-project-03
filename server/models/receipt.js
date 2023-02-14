@@ -10,7 +10,7 @@ const receiptSchema = new Schema({
         default: Date.now
     },
     place: {
-        type: SchemaTypes.ObjectId,
+        type: Schema.Types.ObjectId,
         ref:"place",
         required: true
     }
