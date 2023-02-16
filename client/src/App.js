@@ -46,17 +46,21 @@ function App() {
 
   return (
     <ChakraProvider>
-    <ApolloProvider client={client}>
-    <Nav
-      pages={pages}
-      setCurrentPage={setCurrentPage}
-      currentPage={currentPage}
-    />
-    <main>
-      <Page currentPage={currentPage}></Page>
-    </main>
+      <ApolloProvider client={client}>
+ 
 
-    </ApolloProvider>
+        <Nav
+          pages={pages}
+          setCurrentPage={setCurrentPage}
+          currentPage={currentPage}
+          />
+        <main>
+          <Page currentPage={currentPage}>
+          
+          </Page>
+        </main>
+
+      </ApolloProvider>
     </ChakraProvider>
   );
 }
