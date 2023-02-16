@@ -10,6 +10,7 @@ import Auth from './utils/auth'
 // import User from './pages/user'
 // import Login from './pages/login'
 
+import Container from './components/Container'
 import Page from './components/page'
 import Nav from './components/nav'
 
@@ -54,10 +55,11 @@ function App() {
           setCurrentPage={setCurrentPage}
           currentPage={currentPage}
           />
+
         <main>
-          <Page currentPage={currentPage}>
-          
-          </Page>
+          <Container>
+            <Page currentPage={currentPage}></Page>
+          </Container>
         </main>
 
       </ApolloProvider>

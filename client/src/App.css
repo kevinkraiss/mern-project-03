@@ -1,15 +1,30 @@
-
-
-
-
-/* nav styling */
-
 :root{
   --primaryColor:#31493C;
   --textColor:#B3EFB2;
   --bgColor:#E8F1F2;
   --color4:#001A23;
+  
+  --primary: #ef5350;
+  --primaryDark: #c62828;
+  --primaryDarkest: #ab2222;
+  --secondary: #3761a8;
+  --secondaryLight: #c6d4ed;
+  --secondaryDark: #151229;
+  --hightlight: #feca1b;
+  --hightlightDark: #aa8509;
+  --light: #fefefe;
+  --green: #2FF903;
+  --greenDark: #1c4911;
 }
+
+.container {
+  display: block;
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* nav styling */
 
 nav {
   padding-top: 24px;
@@ -46,6 +61,8 @@ button {
   font-weight: 600;
 
 }
+
+/* login styling */
 
 form {
   padding: 15px 0;
