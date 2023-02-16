@@ -4,6 +4,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { ApolloClient, createHttpLink, InMemoryCache, ApolloProvider } from '@apollo/client'
 import { setContext } from '@apollo/client/link/context'
 import Auth from './utils/auth'
+import Header from "./components/header"
+
+import Footer from "./components/footer"
 
 import Home from './pages/home'
 import User from './pages/user'
@@ -34,7 +37,13 @@ function App() {
   return (
     <ChakraProvider>
     <ApolloProvider client={client}>
+      <Header>
 
+      </Header>
+      
+    <Footer 
+     
+    />
     </ApolloProvider>
     </ChakraProvider>
   );
