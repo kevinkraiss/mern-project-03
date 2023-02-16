@@ -23,6 +23,7 @@ const Login = () => {
   return (
     <form id="login-form" onSubmit={handleSubmit}>
       <h1>Login</h1>
+      <p>Please enter your user credentials to continue.</p>
       <input 
         name="email"
         value={email}

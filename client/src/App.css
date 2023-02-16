@@ -18,7 +18,8 @@
 }
 
 .container {
-  display: block;
+  display: flex;
+  flex-direction: column;
   max-width: 1020px;
   margin: 0 auto;
   padding: 0 15px;
@@ -27,6 +28,7 @@
 /* nav styling */
 
 nav {
+  justify-content: end;
   padding-top: 24px;
   margin-right: 0px;
   float: right;
@@ -65,59 +67,34 @@ button {
 /* login styling */
 
 form {
+  margin: 30px;
   padding: 15px 0;
-  width: 100%;
+  display: block;
 }
 
-#search-form {
-  background: var(--primaryDark);
-  position: fixed;
-  bottom: 0;
-  left: 0;
+#login-form p {
+  margin: 5px 0px;
+  line-height: 25px;
+  text-align: center;
 }
 
-.dark #search-form {
-  background: var(--secondary);
+#login-form h1 {
+  font-size: 36px;
+  text-align: center;
 }
 
-#search-form .container {
-  display: flex;
-  align-items: center;
+#login-form button {
+  background-color: var(--secondary);
+  border-radius: 0;
 }
-
-#search-form .container button {
-  display: grid;
-  place-items: center;
-  margin-left: 15px;
-  border-radius: 100px;
-  padding: 5px;
-} 
 
 input, select {
   border-width: 0;
   border-bottom: 3px solid var(--light);  
   width: 100%;
   font-size: 18px;
-  font-family: 'Press Start 2P', cursive;
   outline: none;
   padding: 5px;
-}
-
-#search-form input { 
-  background: transparent;
-  color: var(--light);
-}
-
-#search-form input:focus {
-  color: var(--hightlight);
-  background-color: var(--primaryDarkest);
-  border-bottom-color: var(--hightlight);
-}
-
-#search-form input:focus {
-  color: var(--green);
-  background-color: var(--secondaryDark);
-  border-bottom-color: var(--light);
 }
 
 #login-form input {

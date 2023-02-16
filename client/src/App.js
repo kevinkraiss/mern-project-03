@@ -51,6 +51,7 @@ function App() {
       <ApolloProvider client={client}>
  
 
+        <Container>
         <Nav
           pages={pages}
           setCurrentPage={setCurrentPage}
@@ -58,10 +59,9 @@ function App() {
           />
 
         <main>
-          <Container>
             <Page currentPage={currentPage}></Page>
-          </Container>
         </main>
+          </Container>
 
       </ApolloProvider>
     </ChakraProvider>
