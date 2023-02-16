@@ -9,28 +9,41 @@ import headerImage from "../assets/milwaukee-wide.jpg"
     return (
         <div class="container" style={{backgroundImage:`url(${headerImage})`,height:"150px",backgroundSize:"contain"}}>
   
-         {/* <div className="position-absolute top-0 end-0"> */}
-  {/* <div class="container fixed-bottom text-center" style={{backgroundImage: `url(${headerImage})`}}> */}
-  <div style={{display:"flex", justifyContent:"flex-start"}}>
-                <h1 style={{padding:"20px"}}>
-                    VITTILS
-                {/* <img src={headerImage} style={{alignContent:"center" }}alt="restaraunt-background background"></img> */}
-                </h1>
+        
+  <div style={{
+      display:"flex",
+      justifyContent:"flex-start",
+      paddingTop:"10px"
+    }}>
+            
 
-                <h2  style={{padding:"20px"}}>
-                    WISCONSIN
-                </h2>
-  </div>
+    <h1 style={{
+        fontWeight:"bold",
+        borderLeft:"solid 5px",
+        borderRight:"solid 5px",
+        color:"#0d6efd",
+        padding:"20px 20px 20px 20px"
+        }}>
+         VITTLES
+        </h1>
+           
+    <h1  style={{
+        fontWeight:"bold",
+        padding:"20px"
+        }}>
+        WISCONSIN
+        </h1>
+    </div>
 
-            <header>
-                <div>
+        {/* <header>
+           <div>
 
-                {props.children}
+         {props.children}
 
-                </div>
-            </header>
+        </div>
+    </header> */}
 
-         {/* </div> */}
+         
 
         </div>
     );
