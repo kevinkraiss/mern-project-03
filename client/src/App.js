@@ -5,6 +5,9 @@ import { ApolloClient, createHttpLink, InMemoryCache, ApolloProvider } from '@ap
 import { setContext } from '@apollo/client/link/context'
 import { useState } from 'react'
 import Auth from './utils/auth'
+import Header from "./components/header"
+
+import Footer from "./components/footer"
 
 import Container from './components/Container'
 import Page from './components/page'
@@ -41,6 +44,7 @@ function App() {
 
   return (
     <ChakraProvider>
+
       <ApolloProvider client={client}>
  
 
@@ -60,6 +64,7 @@ function App() {
           </Container>
 
       </ApolloProvider>
+
     </ChakraProvider>
   );
 }
