@@ -2,18 +2,16 @@ import Login from '../pages/login'
 import Home from '../pages/home'
 import User from '../pages/user'
 
-function Page({ currentPage }) {
+function Page({ currentPage, setCurrentPage }) {
 
   const renderPage = () => {
-    switch (currentPage.name) {
-      case 'Login':
-        return <Login />;
+    switch (currentPage) {
       case 'Home':
         return <Home />;
       case 'User':
         return <User />;
       default:
-        return <Login />;
+        return <Login setCurrentPage={setCurrentPage} />;
     }
   };
 

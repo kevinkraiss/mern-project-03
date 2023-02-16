@@ -3,7 +3,7 @@ import { LOGIN } from "../utils/mutations"
 import { useMutation } from "@apollo/client"
 import Auth from '../utils/auth'
 
-const Login = () => {
+const Login = ({setCurrentPage}) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
@@ -17,7 +17,9 @@ const Login = () => {
         password,
       }
     })
+    console.log(data)
     Auth.login(data.login.token)
+    setCurrentPage('Home')
   }
   
   return (

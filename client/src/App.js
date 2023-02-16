@@ -6,10 +6,6 @@ import { setContext } from '@apollo/client/link/context'
 import { useState } from 'react'
 import Auth from './utils/auth'
 
-// import Home from './pages/home'
-// import User from './pages/user'
-// import Login from './pages/login'
-
 import Container from './components/Container'
 import Page from './components/page'
 import Nav from './components/nav'
@@ -35,15 +31,13 @@ const client = new ApolloClient({
   cache: new InMemoryCache()
 })
 
+const pageNames = ['Home', 'User', 'Login']
+
 function App() {
 
-  const [pages] = useState([
-    {name: 'Login'},
-    {name: 'Home'},
-    {name: 'User'}
-  ])
 
-  const [currentPage, setCurrentPage] = useState(pages[0])
+
+  const [currentPage, setCurrentPage] = useState(pageNames)
 
   return (
     <ChakraProvider>
@@ -52,13 +46,16 @@ function App() {
 
         <Container>
         <Nav
-          pages={pages}
+          pages={pageNames}
           setCurrentPage={setCurrentPage}
           currentPage={currentPage}
           />
 
         <main>
-            <Page currentPage={currentPage}></Page>
+            <Page 
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
+            ></Page>
         </main>
           </Container>
 

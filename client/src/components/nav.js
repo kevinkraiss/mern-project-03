@@ -1,6 +1,9 @@
 import { useEffect } from 'react'
+import auth from '../utils/auth'
+import Auth from '../utils/auth'
 
 const Nav = props => {
+    const loggedIn = Auth.loggedIn()
 
     const {
         pages = [],
@@ -9,25 +12,44 @@ const Nav = props => {
     } = props
 
     useEffect(() => {
-        document.title = currentPage.name
+        document.title = currentPage
     }, [currentPage])
+
     return (
         <nav>
             <ul className='flex-row'>
-                {pages.map((Page) => (
-                    <li
-                    className={`${
-                        currentPage.name === Page.name ? 'navActive' : 'navInactive'}`}
-                    key={Page.name}
-                    >
+                {pages
+                    .filter((page) => {
+                        return page !== 'Login' || !loggedIn 
+                    })
+                    .map((page) => (
+                        <li
+                        className={`${
+                            currentPage === page ? 'navActive' : 'navInactive'}`}
+                        key={page}
+                        >
+                            
+                            <button
+                                onClick={() => setCurrentPage(page)}
+                            >
+                                {page}
+                            </button>
+                        </li>
+                    ))
+                }
+                {loggedIn && (
+                    <li>
                         
-                    <button
-                        onClick={() => setCurrentPage(Page)}
-                    >
-                        {Page.name}
-                    </button>
+                        <button
+                            onClick={() => {
+                                Auth.logout()
+                                setCurrentPage('Login')
+                            }}
+                        >
+                            Logout
+                        </button>
                     </li>
-                ))}
+                )}
             </ul>
         </nav>
     )
