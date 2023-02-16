@@ -37,6 +37,10 @@ nav {
   display: flex;
 }
 
+.navActive {
+  background-color: var(--textColor);
+}
+
 ul {
   list-style-type: none;
   display:inline-flex;
@@ -84,8 +88,9 @@ form {
 }
 
 #login-form button {
-  background-color: var(--secondary);
+  background-color: var(--bgColor);
   border-radius: 0;
+  padding: 5px;
 }
 
 input, select {
