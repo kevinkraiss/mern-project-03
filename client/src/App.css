@@ -1,28 +1,108 @@
-.App {
+:root{
+  --primaryColor:#31493C;
+  --textColor:#B3EFB2;
+  --bgColor:#E8F1F2;
+  --color4:#001A23;
+  
+  --primary: #ef5350;
+  --primaryDark: #c62828;
+  --primaryDarkest: #ab2222;
+  --secondary: #3761a8;
+  --secondaryLight: #c6d4ed;
+  --secondaryDark: #151229;
+  --hightlight: #feca1b;
+  --hightlightDark: #aa8509;
+  --light: #fefefe;
+  --green: #2FF903;
+  --greenDark: #1c4911;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* nav styling */
+
+nav {
+  justify-content: end;
+  padding-top: 24px;
+  margin-right: 0px;
+  float: right;
+  font-size: 20px;
+  list-style-type: none;
+  display: flex;
+}
+
+.navActive {
+  background-color: var(--textColor);
+}
+
+ul {
+  list-style-type: none;
+  display:inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 15px;
+  
+}
+
+li {
+  background-color: var(--bgColor);
+}
+
+button {
+  padding: 20px;
+  margin: 10px;
+  color: var(--textColor);
+  background-color: var(--primaryColor);
+  border-bottom-left-radius: 15px;
+  width: 8vw;
+  min-width: 90px;
+  font-weight: 600;
+
+}
+
+/* login styling */
+
+form {
+  margin: 30px;
+  padding: 15px 0;
+  display: block;
+}
+
+#login-form p {
+  margin: 5px 0px;
+  line-height: 25px;
   text-align: center;
 }
 
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#login-form h1 {
+  font-size: 36px;
+  text-align: center;
 }
 
-.App-link {
-  color: #61dafb;
+#login-form button {
+  background-color: var(--bgColor);
+  border-radius: 0;
+  padding: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input, select {
+  border-width: 0;
+  border-bottom: 3px solid var(--light);  
+  width: 100%;
+  font-size: 18px;
+  outline: none;
+  padding: 5px;
+}
+
+#login-form input {
+  border-bottom: 3px solid var(--secondaryDark);
+  margin-bottom: 15px;
 }

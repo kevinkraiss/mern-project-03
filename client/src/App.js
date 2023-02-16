@@ -3,14 +3,15 @@ import { ChakraProvider } from '@chakra-ui/react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { ApolloClient, createHttpLink, InMemoryCache, ApolloProvider } from '@apollo/client'
 import { setContext } from '@apollo/client/link/context'
+import { useState } from 'react'
 import Auth from './utils/auth'
 import Header from "./components/header"
 
 import Footer from "./components/footer"
 
-import Home from './pages/home'
-import User from './pages/user'
-import Login from './pages/login'
+import Container from './components/Container'
+import Page from './components/page'
+import Nav from './components/nav'
 
 // create and import components
  
@@ -33,18 +34,37 @@ const client = new ApolloClient({
   cache: new InMemoryCache()
 })
 
+const pageNames = ['Home', 'User', 'Login']
+
 function App() {
+
+
+
+  const [currentPage, setCurrentPage] = useState(pageNames)
+
   return (
     <ChakraProvider>
-    <ApolloProvider client={client}>
-      <Header>
 
-      </Header>
-      
-    <Footer 
-     
-    />
-    </ApolloProvider>
+      <ApolloProvider client={client}>
+ 
+
+        <Container>
+        <Nav
+          pages={pageNames}
+          setCurrentPage={setCurrentPage}
+          currentPage={currentPage}
+          />
+
+        <main>
+            <Page 
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
+            ></Page>
+        </main>
+          </Container>
+
+      </ApolloProvider>
+
     </ChakraProvider>
   );
 }
