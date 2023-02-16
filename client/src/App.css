@@ -1,28 +1,109 @@
-.App {
-  text-align: center;
+
+
+
+
+/* nav styling */
+
+:root{
+  --primaryColor:#31493C;
+  --textColor:#B3EFB2;
+  --bgColor:#E8F1F2;
+  --color4:#001A23;
 }
 
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav {
+  padding-top: 24px;
+  margin-right: 0px;
+  float: right;
+  font-size: 20px;
+  list-style-type: none;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+}
+
+ul {
+  list-style-type: none;
+  display:inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 15px;
+  
 }
 
-.App-link {
-  color: #61dafb;
+li {
+  background-color: var(--bgColor);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button {
+  padding: 20px;
+  margin: 10px;
+  color: var(--textColor);
+  background-color: var(--primaryColor);
+  border-bottom-left-radius: 15px;
+  width: 8vw;
+  min-width: 90px;
+  font-weight: 600;
+
+}
+
+form {
+  padding: 15px 0;
+  width: 100%;
+}
+
+#search-form {
+  background: var(--primaryDark);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.dark #search-form {
+  background: var(--secondary);
+}
+
+#search-form .container {
+  display: flex;
+  align-items: center;
+}
+
+#search-form .container button {
+  display: grid;
+  place-items: center;
+  margin-left: 15px;
+  border-radius: 100px;
+  padding: 5px;
+} 
+
+input, select {
+  border-width: 0;
+  border-bottom: 3px solid var(--light);  
+  width: 100%;
+  font-size: 18px;
+  font-family: 'Press Start 2P', cursive;
+  outline: none;
+  padding: 5px;
+}
+
+#search-form input { 
+  background: transparent;
+  color: var(--light);
+}
+
+#search-form input:focus {
+  color: var(--hightlight);
+  background-color: var(--primaryDarkest);
+  border-bottom-color: var(--hightlight);
+}
+
+#search-form input:focus {
+  color: var(--green);
+  background-color: var(--secondaryDark);
+  border-bottom-color: var(--light);
+}
+
+#login-form input {
+  border-bottom: 3px solid var(--secondaryDark);
+  margin-bottom: 15px;
 }
