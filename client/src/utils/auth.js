@@ -22,15 +22,19 @@ class AuthService {
   getToken() {
     return localStorage.getItem('id_token');
   }
+  
+  login(token) {
+    localStorage.setItem(lsKey, token)
+    // const decoded = decode(token)
+    // const { _id } = decoded?.data
+    // window.location.assign(`/user/${_id}`)
 
-  login(idToken) {
-    localStorage.setItem('id_token', idToken);
-    window.location.assign('/');
+
   }
 
   logout() {
-    localStorage.removeItem('id_token');
-    window.location.reload();
+    localStorage.removeItem(lsKey)
+    // window.location.assign(`/`)
   }
 }
 

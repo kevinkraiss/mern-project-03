@@ -6,10 +6,9 @@ import { ApolloClient, createHttpLink, InMemoryCache, ApolloProvider } from '@ap
 import { setContext } from '@apollo/client/link/context'
 import { useState } from 'react'
 import Auth from './utils/auth'
+import Header from "./components/header"
 
-// import Home from './pages/home'
-// import User from './pages/user'
-// import Login from './pages/login'
+import Footer from "./components/footer"
 
 import Container from './components/Container'
 import Page from './components/page'
@@ -36,35 +35,37 @@ const client = new ApolloClient({
   cache: new InMemoryCache()
 })
 
+const pageNames = ['Home', 'User', 'Login']
+
 function App() {
 
-  const [pages] = useState([
-    {name: 'Login'},
-    {name: 'Home'},
-    {name: 'User'},
-    {name: 'Signup'}
-  ])
 
-  const [currentPage, setCurrentPage] = useState(pages[0])
+
+  const [currentPage, setCurrentPage] = useState(pageNames)
 
   return (
     <ChakraProvider>
+
       <ApolloProvider client={client}>
  
-
+        <Header />
         <Container>
         <Nav
-          pages={pages}
+          pages={pageNames}
           setCurrentPage={setCurrentPage}
           currentPage={currentPage}
           />
 
         <main>
-            <Page currentPage={currentPage}></Page>
+            <Page 
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
+            ></Page>
         </main>
           </Container>
-
+        <Footer />
       </ApolloProvider>
+
     </ChakraProvider>
   );
 }
