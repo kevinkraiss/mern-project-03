@@ -19,7 +19,7 @@ const User = () => {
       const { data } = await addReceipt({
         variables: {
           user: user._id,
-          spent,
+          spent: parseInt(spent),
           purchaseDate,
           place
         }
