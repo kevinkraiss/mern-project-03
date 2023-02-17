@@ -1,26 +1,31 @@
 import { useState } from "react"
 import { ADD_RECEIPT } from '../utils/mutations'
 import { useMutation } from "@apollo/client"
+import Auth from '../utils/auth'
 
 
 const User = () => {
-    const [user, setUser] = useState('')
+    const user = Auth.getLoggedInUser()
+
     const [spent, setSpent] = useState(10)
     const [purchaseDate, setPurchaseDate] = useState('')
     const [place, setPlace] = useState('')
   
     const [addReceipt, { loading, error }] = useMutation(ADD_RECEIPT)
   
+
     const handleSubmit = async e => {
       e.preventDefault()
       const { data } = await addReceipt({
         variables: {
-          user,
-          spent,
+          user: user._id,
+          spent: parseInt(spent),
           purchaseDate,
           place
         }
       })
+
+      
       console.log(data)
 
     }
