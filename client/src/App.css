@@ -13,15 +13,57 @@
   }
 }
 
+<<<<<<< Updated upstream
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
+=======
+li {
+  float: left;
+}
+
+button {
+  padding: 20px;
+  margin: 5px;
+  color: var(--textColor);
+  background-color: var(--primaryColor);
+  border-bottom-left-radius: 15px;
+  width: 8vw;
+  min-width: 90px;
+  font-weight: 600;
+  background-color: #E49743;
+}
+
+/* login styling */
+
+form {
+  padding: 15px 0;
+  width: 100%;
+}
+
+#search-form {
+  background: var(--primaryDark);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.dark #search-form {
+  background: var(--secondary);
+}
+
+#search-form .container {
+>>>>>>> Stashed changes
   display: flex;
   flex-direction: column;
   align-items: center;
+<<<<<<< Updated upstream
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+=======
+  border: 5px; 
+>>>>>>> Stashed changes
 }
 
 .App-link {
@@ -36,3 +78,24 @@
     transform: rotate(360deg);
   }
 }
+<<<<<<< Updated upstream
+=======
+
+#search-form input:focus {
+  color: var(--hightlight);
+  background-color: var(--primaryDarkest);
+  border-bottom-color: var(--hightlight);
+}
+
+#search-form input:focus {
+  color: var(--green);
+  background-color: var(--secondaryDark);
+  border-bottom-color: var(--light);
+}
+
+#login-form input {
+  border-bottom: 3px solid var(--secondaryDark);
+  margin-bottom: 15px;
+  border: 5px;
+}
+>>>>>>> Stashed changes
