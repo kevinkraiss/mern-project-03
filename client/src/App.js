@@ -47,7 +47,7 @@ function App() {
 
       <ApolloProvider client={client}>
  
-
+        <Header />
         <Container>
         <Nav
           pages={pageNames}
@@ -62,7 +62,7 @@ function App() {
             ></Page>
         </main>
           </Container>
-
+        <Footer />
       </ApolloProvider>
 
     </ChakraProvider>
