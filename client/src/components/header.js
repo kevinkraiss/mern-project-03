@@ -7,7 +7,7 @@ import headerImage from "../assets/milwaukee-wide.jpg"
   function Header(props) {
 
     return (
-        <div class="container" style={{backgroundImage:`url(${headerImage})`,height:"150px",backgroundSize:"contain"}}>
+        <div className="container" style={{backgroundImage:`url(${headerImage})`,height:"150px",backgroundSize:"contain"}}>
   
         
   <div style={{
