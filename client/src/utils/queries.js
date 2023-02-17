@@ -1,37 +1,48 @@
 import { gql } from '@apollo/client';
 
 export const GET_USER = gql`
-  query allProfiles {
-    profiles {
+query User($id: ID!) {
+  user(_id: $id) {
+    email
+    username
+    _id
+    receipts {
       _id
-      name
-      skills
+      spent
+      purchaseDate
     }
   }
+}
 `;
 
-export const GET_USERS = gql`
-  query singleProfile($profileId: ID!) {
-    profile(profileId: $profileId) {
-      _id
-      name
-      skills
-    }
-  }
-`;
 
 export const GET_PLACE = gql`
-  query me {
-    me {
-      _id
-      name
-      skills
-    }
+query Place($id: ID!) {
+  place(_id: $id) {
+    _id
+    name
+    formatted_address
+    editorial_summary
   }
+}
 `;
 
 export const GET_PLACES = gql`
+query ALL_PLACES {
+  places {
+    _id
+    name
+  }
+}
 `;
 
 export const GET_RECEIPT = gql`
+query Receipt($id: ID!) {
+  receipt(_id: $id) {
+    _id
+    spent
+    purchaseDate
+    place
+  }
+}
 `;
