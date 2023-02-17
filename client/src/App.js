@@ -41,7 +41,8 @@ function App() {
   const [pages] = useState([
     {name: 'Login'},
     {name: 'Home'},
-    {name: 'User'}
+    {name: 'User'},
+    {name: 'Signup'}
   ])
 
   const [currentPage, setCurrentPage] = useState(pages[0])

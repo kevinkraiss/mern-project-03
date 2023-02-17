@@ -1,47 +1,37 @@
-import decode from 'jwt-decode'
-
-const lsKey = 'restaurantToken'
+import decode from 'jwt-decode';
 
 class AuthService {
-  getLoggedInUser() {
-    return this.getToken() && decode(this.getToken())?.data || false
+  getProfile() {
+    return decode(this.getToken());
   }
 
   loggedIn() {
-    const token = this.getToken()
-    if (token && !this.isTokenExpired(token) ) {
-      const decoded = decode(token)
-      return decoded
-    }
-    return false
+    const token = this.getToken();
+    return token && !this.isTokenExpired(token) ? true : false;
   }
 
   isTokenExpired(token) {
-    const decoded = decode(token)
+    const decoded = decode(token);
     if (decoded.exp < Date.now() / 1000) {
-      localStorage.removeItem(lsKey)
-      return true
+      localStorage.removeItem('id_token');
+      return true;
     }
-    return false
+    return false;
   }
 
   getToken() {
-    return localStorage.getItem(lsKey)
+    return localStorage.getItem('id_token');
   }
-  
-  login(token) {
-    localStorage.setItem(lsKey, token)
-    const decoded = decode(token)
-    const { _id } = decoded?.data
 
-    window.location.assign(`/user/${_id}`)
-
+  login(idToken) {
+    localStorage.setItem('id_token', idToken);
+    window.location.assign('/');
   }
 
   logout() {
-    localStorage.removeItem(lsKey)
-    window.location.assign(`/`)
+    localStorage.removeItem('id_token');
+    window.location.reload();
   }
 }
 
-export default new AuthService()
+export default new AuthService();

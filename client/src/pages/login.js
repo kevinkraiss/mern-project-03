@@ -2,46 +2,84 @@ import { useState } from "react"
 import { LOGIN } from "../utils/mutations"
 import { useMutation } from "@apollo/client"
 import Auth from '../utils/auth'
+import { Link } from 'react-router-dom';
 
-const Login = () => {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-
-  const [login, { loading, error }] = useMutation(LOGIN)
-
-  const handleSubmit = async e => {
-    e.preventDefault()
-    const { data } = await login({
-      variables: {
-        email,
-        password,
+const Login = (props) => {
+    const [formState, setFormState] = useState({ email: '', password: '' });
+    const [login, { error, data }] = useMutation(LOGIN);
+  
+    // update state based on form input changes
+    const handleChange = (event) => {
+      const { name, value } = event.target;
+  
+      setFormState({
+        ...formState,
+        [name]: value,
+      });
+    };
+  
+    // submit form
+    const handleFormSubmit = async (event) => {
+      event.preventDefault();
+      console.log(formState);
+      try {
+        const { data } = await login({
+          variables: { ...formState },
+        });
+  
+        Auth.login(data.login.token);
+      } catch (e) {
+        console.error(e);
       }
-    })
-    Auth.login(data.login.token)
-  }
+  
+      // clear form values
+      setFormState({
+        email: '',
+        password: '',
+      });
+    };
+  
   
   return (
-    <form id="login-form" onSubmit={handleSubmit}>
-      <h1>Login</h1>
+    <main className="flex-row justify-center mb-4">
+    <div className="card-body">
+    <h1>Login</h1>
+    {data ? (
+        <p>
+          Success! You may now head{' '}
+          <Link to="/">back to the homepage.</Link>
+        </p>
+      ) : (
+    <form id="login-form" onSubmit={handleFormSubmit}>
       <p>Please enter your user credentials to continue.</p>
       <input 
+        className="form-input"
+        placeholder="Your email"
         name="email"
-        value={email}
-        onChange={e => setEmail(e.target.value)}
-        placeholder="Email"
         type="email"
+        value={formState.email}
+        onChange={handleChange}
       />
       <input 
+        className="form-input"
+        placeholder="******"
         name="password"
-        value={password}
-        onChange={e => setPassword(e.target.value)}
-        placeholder="Password"
         type="password"
+        value={formState.password}
+        onChange={handleChange}
       />
-      <button>Login</button>
+      <button type="sumbit">Login</button>
     </form>
-  )
-}
+      )}
+    {error && (
+        <div className="my-3 p-3 bg-danger text-white">
+          {error.message}
+        </div>
+      )}
+    </div>
+    </main>
+  );
+};
 
 
 export default Login;
