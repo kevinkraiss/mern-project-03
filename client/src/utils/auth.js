@@ -1,6 +1,6 @@
 import decode from 'jwt-decode'
 
-const lsKey = 'restaurantToken'
+const lsKey = 'pokedexToken'
 
 class AuthService {
   getLoggedInUser() {
@@ -31,16 +31,14 @@ class AuthService {
   
   login(token) {
     localStorage.setItem(lsKey, token)
-    // const decoded = decode(token)
-    // const { _id } = decoded?.data
-    // window.location.assign(`/user/${_id}`)
-
-
+    const decoded = decode(token)
+    const { _id } = decoded?.data
+    window.location.assign(`/`)
   }
 
   logout() {
     localStorage.removeItem(lsKey)
-    // window.location.assign(`/`)
+    window.location.assign(`/`)
   }
 }
 
