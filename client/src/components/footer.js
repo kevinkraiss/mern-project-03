@@ -6,21 +6,21 @@ function Footer(props) {
     return (
 
 
-<div class="container fixed-bottom text-center" style={{backgroundImage: `url(${footerImage})`,height:"100px"}}>
+<div className="container fixed-bottom text-center" style={{backgroundImage: `url(${footerImage})`,height:"100px"}}>
 
-  <div class="row">
-    <div class="col">
+  <div className="row">
+    <div className="col">
      <h1 style={{color:"white", fontSize:"25px",paddingTop:"5px"}}>
      VITTLES 2023
       </h1> 
     </div>
   </div>
-  <div class="row">
+  <div className="row">
 
-    <div class="col-3">
+    <div className="col-3">
       1 
     </div>
-    <div class="col-6">
+    <div className="col-6">
       2 
 
   <div className="col" style={{
@@ -53,7 +53,7 @@ function Footer(props) {
       </a>
     </div>
 </div>
-    <div class="col-3">
+    <div className="col-3">
       3 
     </div>
 
