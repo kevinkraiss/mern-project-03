@@ -51,8 +51,10 @@ const resolvers = {
             const place = await Place.create(args)
             return place
         },
-        addReceipt:async (parent, args, context, info) => {
-            const receipt= await Receipt.create(args)
+        addReceipt:async (parent, {user, spent, purchaseDate, place}, context, info) => {
+            const receipt= await Receipt.create({user, spent, purchaseDate, place})
+
+            await User.findByIdAndUpdate(user, { $push: { receipts: receipt._id } })
             return receipt
         },
     }

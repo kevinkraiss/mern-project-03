@@ -6,7 +6,9 @@ function Footer(props) {
     return (
 
 
-<div className="container fixed-bottom text-center" style={{backgroundImage: `url(${footerImage})`,height:"100px"  }}>
+
+<div className="container fixed-bottom text-center" style={{backgroundImage: `url(${footerImage})`,height:"100px"}}>
+
 
   <div className="row">
     <div className="col">
@@ -17,9 +19,11 @@ function Footer(props) {
   </div>
   <div className="row">
 
-      <div className="col-3">
-        1 
-      </div>
+
+    <div className="col-3">
+      1 
+    </div>
+
     <div className="col-6">
       2 
 
