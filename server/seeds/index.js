@@ -34,7 +34,7 @@ connection.once('open', async () => {
     const newReceipt = await Receipt.create({
         spent: 25.00,
         purchaseDate: "02/02/2023",
-        place: newPlace._id,
+        place: 'Tesstaurant',
         user: newUser._id
 
     })
