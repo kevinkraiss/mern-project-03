@@ -5,7 +5,7 @@ import { useMutation } from "@apollo/client"
 
 const User = () => {
     const [user, setUser] = useState('')
-    const [spent, setSpent] = useState(10)
+    const [spent, setSpent] = useState('')
     const [purchaseDate, setPurchaseDate] = useState('')
     const [place, setPlace] = useState('')
   
@@ -29,6 +29,7 @@ const User = () => {
     return (
  <div className="receipt">
     <form id= "receipt-form" onSubmit={handleSubmit}>
+    <h2>Add Receipt Information</h2>
         <label>Location</label>
             <input
             name="place"
