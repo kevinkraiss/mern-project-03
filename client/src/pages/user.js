@@ -7,7 +7,7 @@ import Auth from '../utils/auth'
 const User = () => {
     const user = Auth.getLoggedInUser()
 
-    const [spent, setSpent] = useState(10)
+    const [spent, setSpent] = useState('')
     const [purchaseDate, setPurchaseDate] = useState('')
     const [place, setPlace] = useState('')
   
@@ -19,7 +19,7 @@ const User = () => {
       const { data } = await addReceipt({
         variables: {
           user: user._id,
-          spent: parseInt(spent),
+          spent: parseFloat(spent),
           purchaseDate,
           place
         }
