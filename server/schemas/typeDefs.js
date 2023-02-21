@@ -46,7 +46,7 @@ const typeDefs = `
         addReceipt(
             _id: ID
             user: String!
-            spent: Int
+            spent: Float!
             purchaseDate: String!
             place: String!
         ): Receipt
