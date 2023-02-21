@@ -6,6 +6,7 @@ import Auth from '../utils/auth'
 
 const User = () => {
     const user = Auth.getLoggedInUser()
+    console.log(user)
 
     const [spent, setSpent] = useState(10)
     const [purchaseDate, setPurchaseDate] = useState('')
@@ -27,6 +28,10 @@ const User = () => {
 
       
       console.log(data)
+
+      setPlace('')
+      setSpent('')
+      setPurchaseDate('')
 
     }
 
