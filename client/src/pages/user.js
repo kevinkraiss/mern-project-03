@@ -19,7 +19,8 @@ const User = () => {
       const { data } = await addReceipt({
         variables: {
           user: user._id,
-          spent: parseInt(spent),
+          spent: parseFloat(spent),
+          // fix to Float in typeDefs, resolvers, mutations
           purchaseDate,
           place
         }
