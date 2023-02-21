@@ -9,6 +9,7 @@ query User($id: ID!) {
     receipts {
       _id
       spent
+      place
       purchaseDate
     }
   }

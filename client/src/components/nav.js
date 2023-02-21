@@ -1,5 +1,4 @@
 import { useEffect } from 'react'
-import auth from '../utils/auth'
 import Auth from '../utils/auth'
 
 const Nav = props => {

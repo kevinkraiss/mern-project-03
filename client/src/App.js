@@ -62,7 +62,7 @@ function App() {
             ></Page>
         </main>
           </Container>
-        <Footer />
+        {/* <Footer /> */}
       </ApolloProvider>
 
     </ChakraProvider>
