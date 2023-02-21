@@ -32,6 +32,26 @@ const User = () => {
 
 
     return (
+      <section>
+<div className="table">
+      <table class="table table-striped table-bordered">
+      <thead class="thead-dark">
+          <tr height="70px">
+              <th scope="col" width="12%">Date</th>
+              <th scope="col" width="12%">Amount</th>
+              <th scope="col" width="62%">Place</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+            
+              <th scope="row">{purchaseDate} </th>
+              <td>{spent}</td>
+              <td>{place}</td>
+          </tr>
+      </tbody>
+  </table>
+  </div>  
  <div className="receipt">
     <form id= "receipt-form" onSubmit={handleSubmit}>
     <h2>Add Receipt Information</h2>
@@ -59,6 +79,7 @@ const User = () => {
         <button>Sumbit</button>
     </form>
  </div>
+ </section>
     )
 }
 
