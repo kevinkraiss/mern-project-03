@@ -1,7 +1,10 @@
 import { useState } from "react"
 import { ADD_RECEIPT } from '../utils/mutations'
+import { GET_USER } from '../utils/queries'
 import { useMutation } from "@apollo/client"
 import Auth from '../utils/auth'
+
+import Ledger from "../components/ledger"
 
 
 const User = () => {
@@ -19,10 +22,14 @@ const User = () => {
       const { data } = await addReceipt({
         variables: {
           user: user._id,
-          spent: parseInt(spent),
+          spent: parseFloat(spent),
           purchaseDate,
           place
-        }
+        },
+        refetchQueries: [
+          { query: GET_USER }, 
+          'User'
+        ]
       })
 
       
@@ -32,32 +39,35 @@ const User = () => {
 
 
     return (
- <div className="receipt">
-    <form id= "receipt-form" onSubmit={handleSubmit}>
-        <label>Location</label>
-            <input
-            name="place"
-            value={place}
-            onChange={e => setPlace(e.target.value)}
-            placeholder= "location"
-            />
-        <label>Amount Spent</label>
-            <input
-            name="spent"
-            value={spent}
-            onChange={e => setSpent(e.target.value)}
-            placeholder= "0.00"
-            />
-        <label>Date</label>
-            <input
-            name="purchaseDate"
-            value={purchaseDate}
-            onChange={e => setPurchaseDate(e.target.value)}
-            placeholder= "00/00/2023"
-            />
-        <button>Sumbit</button>
-    </form>
- </div>
+      <>
+      <Ledger />
+        <div className="receipt">
+            <form id= "receipt-form" onSubmit={handleSubmit}>
+                <label>Location</label>
+                    <input
+                    name="place"
+                    value={place}
+                    onChange={e => setPlace(e.target.value)}
+                    placeholder= "location"
+                    />
+                <label>Amount Spent</label>
+                    <input
+                    name="spent"
+                    value={spent}
+                    onChange={e => setSpent(e.target.value)}
+                    placeholder= "0.00"
+                    />
+                <label>Date</label>
+                    <input
+                    name="purchaseDate"
+                    value={purchaseDate}
+                    onChange={e => setPurchaseDate(e.target.value)}
+                    placeholder= "00/00/2023"
+                    />
+                <button>Sumbit</button>
+            </form>
+        </div>
+      </>
     )
 }
 

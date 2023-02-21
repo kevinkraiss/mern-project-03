@@ -106,3 +106,19 @@ input, select {
   border-bottom: 3px solid var(--secondaryDark);
   margin-bottom: 15px;
 }
+
+/* ledger styling */
+
+.ledgerRow1 {
+  font-weight: 700;
+  background-color: var(--secondary);
+}
+.ledger-table tr {
+  margin: 10px;
+}
+.ledger-table {
+  padding: 10px;
+  margin: 10px auto;
+  width: 90%;
+}
+
