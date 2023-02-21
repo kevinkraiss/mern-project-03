@@ -14,7 +14,7 @@ export const LOGIN = gql`
 `
 
 export const ADD_RECEIPT = gql `
-mutation ADD_RECEIPT($user: String!,$spent: Float, $purchaseDate: String!, $place: String!) {
+mutation ADD_RECEIPT($user: String!,$spent: Float!, $purchaseDate: String!, $place: String!) {
   addReceipt(user: $user, spent: $spent, purchaseDate: $purchaseDate, place: $place) {
     _id
     spent

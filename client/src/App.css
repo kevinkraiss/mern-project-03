@@ -25,6 +25,10 @@
   padding: 0 15px;
 }
 
+.fix {
+  padding-bottom: 110px;
+}
+
 /* nav styling */
 
 nav {

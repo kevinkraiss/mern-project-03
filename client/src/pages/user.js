@@ -10,8 +10,9 @@ import Ledger from "../components/ledger"
 
 const User = () => {
     const user = Auth.getLoggedInUser()
+ //   console.log(user)
 
-    const [spent, setSpent] = useState(10)
+    const [spent, setSpent] = useState('')
     const [purchaseDate, setPurchaseDate] = useState('')
     const [place, setPlace] = useState('')
   
@@ -35,6 +36,10 @@ const User = () => {
 
       
       console.log(data)
+
+      setPlace('')
+      setSpent('')
+      setPurchaseDate('')
 
     }
 
