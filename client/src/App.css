@@ -93,7 +93,7 @@ form {
   padding: 5px;
 }
 
-input, select {
+#login-form input, select {
   border-width: 0;
   border-bottom: 3px solid var(--light);  
   width: 100%;
@@ -120,5 +120,21 @@ input, select {
   padding: 10px;
   margin: 10px auto;
   width: 90%;
+}
+
+#receipt-form {
+  border: 3px var(--bgColor) solid;
+  display: flex;
+  justify-content: space-between;
+}
+
+#receipt-form label {
+  margin: 5px;
+}
+
+#receipt-form input {
+  font-size: 18px;
+  padding: 5px;
+  background-color: var(--bgColor);
 }
 

@@ -13,6 +13,7 @@ import {
 import { GET_USER } from '../utils/queries'
 import { useQuery } from '@apollo/client'
 import Auth from '../utils/auth'
+import moment from 'moment'
 
 
 const Ledger = props => {
@@ -40,7 +41,7 @@ const Ledger = props => {
                 {userReceipts
                     ?.map((receipt) => (
                         <Tr>
-                            <Td>{receipt.purchaseDate}</Td>
+                            <Td>{moment(receipt.purchaseDate, 'x').format("MM/DD/YYYY")}</Td>
                             <Td>{receipt.place}</Td>
                             <Td isNumeric
                                 className='spent'

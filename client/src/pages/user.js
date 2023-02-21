@@ -3,6 +3,7 @@ import { ADD_RECEIPT } from '../utils/mutations'
 import { GET_USER } from '../utils/queries'
 import { useMutation } from "@apollo/client"
 import Auth from '../utils/auth'
+import moment from 'moment'
 
 import Ledger from "../components/ledger"
 
@@ -43,6 +44,14 @@ const User = () => {
       <Ledger />
         <div className="receipt">
             <form id= "receipt-form" onSubmit={handleSubmit}>
+            <label>Date</label>
+                    <input
+                    name="purchaseDate"
+                    value={purchaseDate}
+                    type="date"
+                    onChange={e => setPurchaseDate(e.target.value)}
+                    placeholder={moment().format('MM/DD/YYYY')}
+                    />
                 <label>Location</label>
                     <input
                     name="place"
@@ -56,13 +65,6 @@ const User = () => {
                     value={spent}
                     onChange={e => setSpent(e.target.value)}
                     placeholder= "0.00"
-                    />
-                <label>Date</label>
-                    <input
-                    name="purchaseDate"
-                    value={purchaseDate}
-                    onChange={e => setPurchaseDate(e.target.value)}
-                    placeholder= "00/00/2023"
                     />
                 <button>Sumbit</button>
             </form>
