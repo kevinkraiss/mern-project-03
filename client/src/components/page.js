@@ -16,7 +16,7 @@ function Page({ currentPage, setCurrentPage }) {
   };
 
   return (
-    <section>
+    <section className='fix'>
         {renderPage()}
     </section>
   );
