@@ -7,7 +7,7 @@ function Footer(props) {
 
 
 
-<div className="container fixed-bottom text-center" style={{backgroundImage: `url(${footerImage})`,height:"100px"}}>
+<div className="container fixed-bottom text-center" style={{ display: 'flex', position: 'fixed', padding: 0,  backgroundImage: `url(${footerImage})`,height:"100px"}}>
 
 
   <div className="row">
@@ -30,7 +30,7 @@ function Footer(props) {
   <div className="col" style={{
       display:"flex",
       justifyContent:"space-around",
-      paddingBottom:'10px'
+      // paddingBottom:'10px'
     }}>
     <a 
       className="nav-link" 
@@ -40,7 +40,7 @@ function Footer(props) {
       style={{
         color:'white',
         fontSize:'25px',
-        paddingBottom:'100px'
+        // paddingBottom:'100px'
     }}></i>
      </a> 
     
@@ -52,7 +52,7 @@ function Footer(props) {
           style={{
             color:'white',
             fontSize:'25px',
-            paddingBottom:'100px'
+            // paddingBottom:'100px'
       }} ></i>
       </a>
     </div>
