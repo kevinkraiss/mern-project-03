@@ -46,7 +46,7 @@ function App() {
     <ChakraProvider>
 
       <ApolloProvider client={client}>
- 
+      <div className="body">
         <Header />
         <Container>
         <Nav
@@ -62,7 +62,8 @@ function App() {
             ></Page>
         </main>
           </Container>
-        {/* <Footer /> */}
+        <Footer />
+        </div>
       </ApolloProvider>
 
     </ChakraProvider>
