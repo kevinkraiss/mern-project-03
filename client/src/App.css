@@ -1,4 +1,4 @@
-main {
+/* body {
   background-color: #e6d2af;
 
 }
@@ -13,7 +13,9 @@ main {
 } 
 
 /* nav styling */
-
+nav {
+  background-color: #e6d2af;
+}
 
  ul {
   list-style-type: none;
@@ -46,4 +48,4 @@ form {
   width: 75%;
   background-color: red;
 
-}
+} 

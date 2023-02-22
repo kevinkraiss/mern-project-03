@@ -34,28 +34,35 @@ const User = () => {
     return (
  <div className="receipt">
     <form id= "receipt-form" onSubmit={handleSubmit}>
-        <label>Location</label>
+        <label>Location: </label>
+        <br></br>
             <input
             name="place"
             value={place}
             onChange={e => setPlace(e.target.value)}
             placeholder= "location"
             />
-        <label>Amount Spent</label>
+            <br></br>
+        <label>Amount Spent: </label>
+        <br></br>
+
             <input
             name="spent"
             value={spent}
             onChange={e => setSpent(e.target.value)}
             placeholder= "0.00"
             />
-        <label>Date</label>
+            <br></br>
+        <label>Date: </label>
+        <br></br>
             <input
             name="purchaseDate"
             value={purchaseDate}
             onChange={e => setPurchaseDate(e.target.value)}
             placeholder= "00/00/2023"
             />
-        <button>Sumbit</button>
+        <br></br>
+        <button>Submit</button>
     </form>
  </div>
     )

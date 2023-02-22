@@ -49,18 +49,18 @@ function App() {
  
         <Header />
         <Container>
+
+        <body>
         <Nav
           pages={pageNames}
           setCurrentPage={setCurrentPage}
           currentPage={currentPage}
           />
-
-        <main>
             <Page 
               currentPage={currentPage}
               setCurrentPage={setCurrentPage}
             ></Page>
-        </main>
+        </body>
           </Container>
         <Footer />
       </ApolloProvider>
