@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { ADD_RECEIPT } from '../utils/mutations'
 import { GET_USER } from '../utils/queries'
 import { useMutation } from "@apollo/client"
@@ -10,7 +10,6 @@ import Ledger from "../components/ledger"
 
 const User = () => {
     const user = Auth.getLoggedInUser()
- //   console.log(user)
 
     const [spent, setSpent] = useState('')
     const [purchaseDate, setPurchaseDate] = useState('')
@@ -18,7 +17,6 @@ const User = () => {
   
     const [addReceipt, { loading, error }] = useMutation(ADD_RECEIPT)
   
-
     const handleSubmit = async e => {
       e.preventDefault()
       const { data } = await addReceipt({
@@ -34,15 +32,17 @@ const User = () => {
         ]
       })
 
-      
-      console.log(data)
-
       setPlace('')
       setSpent('')
       setPurchaseDate('')
-
     }
 
+    useEffect(() => {
+      if (!Auth.loggedIn()) {
+        alert('You must be logged in to use this function!');
+        window.location.href = '/login';
+      }
+    }, []);
 
     return (
       <>
