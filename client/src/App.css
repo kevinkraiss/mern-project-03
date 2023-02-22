@@ -1,20 +1,19 @@
-/* body {
+body {
   background-color: #e6d2af;
-
 }
 
  .container {
   display: block;
-  max-width: 1020px;
+  background-color: #e6d2af;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 10px;
   border: 10px;
-  
+  border-radius: 15px;
 } 
 
 /* nav styling */
-nav {
-  background-color: #e6d2af;
+header {
+  background-color: #E49743;
 }
 
  ul {
@@ -46,6 +45,6 @@ button {
 form {
   padding: 15px 0;
   width: 75%;
-  background-color: red;
+ align-items: center;
 
 } 

@@ -43,14 +43,15 @@ function App() {
   const [currentPage, setCurrentPage] = useState(pageNames)
 
   return (
+    <body>
     <ChakraProvider>
 
       <ApolloProvider client={client}>
- 
+      
         <Header />
         <Container>
 
-        <body>
+       
         <Nav
           pages={pageNames}
           setCurrentPage={setCurrentPage}
@@ -60,12 +61,13 @@ function App() {
               currentPage={currentPage}
               setCurrentPage={setCurrentPage}
             ></Page>
-        </body>
+        
           </Container>
         <Footer />
       </ApolloProvider>
 
     </ChakraProvider>
+    </body>
   );
 }
 

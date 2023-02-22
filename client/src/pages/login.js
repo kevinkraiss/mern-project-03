@@ -24,8 +24,10 @@ const Login = ({setCurrentPage}) => {
   
   return (
     <form id="login-form" onSubmit={handleSubmit}>
-      <h1>Login</h1>
+      <h1>Login </h1>
+      <br></br>
       <p>Please enter your user credentials to continue.</p>
+      <br></br>
       <input 
         name="email"
         value={email}
@@ -33,6 +35,7 @@ const Login = ({setCurrentPage}) => {
         placeholder="Email"
         type="email"
       />
+      <br></br>
       <input 
         name="password"
         value={password}
@@ -40,6 +43,7 @@ const Login = ({setCurrentPage}) => {
         placeholder="Password"
         type="password"
       />
+      <br></br>
       <button>Login</button>
     </form>
   )
