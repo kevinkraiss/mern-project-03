@@ -25,6 +25,10 @@
   padding: 0 15px;
 }
 
+.fix {
+  padding-bottom: 110px;
+}
+
 /* nav styling */
 
 nav {
@@ -93,7 +97,7 @@ form {
   padding: 5px;
 }
 
-input, select {
+#login-form input, select {
   border-width: 0;
   border-bottom: 3px solid var(--light);  
   width: 100%;
@@ -105,4 +109,56 @@ input, select {
 #login-form input {
   border-bottom: 3px solid var(--secondaryDark);
   margin-bottom: 15px;
+}
+
+/* ledger styling */
+
+.ledgerRow1 {
+  font-weight: 700;
+  background-color: var(--secondary);
+}
+.ledger-table tr {
+  margin: 10px;
+}
+.ledger-table {
+  padding: 10px;
+  margin: 10px auto;
+  width: 90%;
+}
+
+#receipt-form {
+  border: 3px var(--bgColor) solid;
+  display: flex;
+  justify-content: space-between;
+}
+
+#receipt-form label {
+  margin: auto;
+  padding: 5px;
+
+}
+
+#receipt-form input {
+  font-size: 18px;
+  padding: 3px;
+  background-color: var(--bgColor);
+}
+
+#receipt-form button {
+  margin: 10px;
+  padding: 3px;
+  outline: 2px solid var(--bgColor);
+  border-radius: 4px;
+}
+
+@media screen and (max-width: 950px) {
+  #receipt-form {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  #receipt-form input {
+    width: 80%;
+    text-align: center;
+  }
 }

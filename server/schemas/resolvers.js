@@ -8,7 +8,7 @@ const resolvers = {
             return await User.find()
         },
         user: async (parent, args, context, info) => {
-            return await User.findById(args._id).populate('receipts')
+            return await User.findById(args._id).populate({path: 'receipts', options: { sort: { purchaseDate : 1}}})
         },
         place: async (parent, args, context, info) => {
             return await Place.findById(args._id)
