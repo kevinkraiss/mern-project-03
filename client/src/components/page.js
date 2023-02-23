@@ -1,6 +1,7 @@
 import Login from '../pages/login'
 import Home from '../pages/home'
 import User from '../pages/user'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 
 function Page({ currentPage, setCurrentPage }) {
 

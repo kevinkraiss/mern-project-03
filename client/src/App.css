@@ -129,12 +129,32 @@ form {
 }
 
 #receipt-form label {
-  margin: 5px;
+  margin: auto;
+  padding: 5px;
+
 }
 
 #receipt-form input {
   font-size: 18px;
-  padding: 5px;
+  padding: 3px;
   background-color: var(--bgColor);
 }
 
+#receipt-form button {
+  margin: 10px;
+  padding: 3px;
+  outline: 2px solid var(--bgColor);
+  border-radius: 4px;
+}
+
+@media screen and (max-width: 950px) {
+  #receipt-form {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  #receipt-form input {
+    width: 80%;
+    text-align: center;
+  }
+}

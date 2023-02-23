@@ -40,12 +40,14 @@ const Ledger = props => {
                 <Tbody>
                 {userReceipts
                     ?.map((receipt) => (
-                        <Tr>
+                        <Tr
+                        key={receipt._id}
+                        >
                             <Td>{moment(receipt.purchaseDate, 'x').format("MM/DD/YYYY")}</Td>
                             <Td>{receipt.place}</Td>
                             <Td isNumeric
                                 className='spent'
-                            >{(Math.round(receipt.spent * 100) / 100).toFixed(2)}</Td>
+                            >${(Math.round(receipt.spent * 100) / 100).toFixed(2)}</Td>
                         </Tr>
                     ))
                 }

@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { ADD_RECEIPT } from '../utils/mutations'
 import { GET_USER } from '../utils/queries'
 import { useMutation } from "@apollo/client"
@@ -10,15 +10,13 @@ import Ledger from "../components/ledger"
 
 const User = () => {
     const user = Auth.getLoggedInUser()
- //   console.log(user)
 
     const [spent, setSpent] = useState('')
-    const [purchaseDate, setPurchaseDate] = useState('')
+    const [purchaseDate, setPurchaseDate] = useState(moment().format('YYYY-MM-DD'))
     const [place, setPlace] = useState('')
   
     const [addReceipt, { loading, error }] = useMutation(ADD_RECEIPT)
   
-
     const handleSubmit = async e => {
       e.preventDefault()
       const { data } = await addReceipt({
@@ -34,37 +32,41 @@ const User = () => {
         ]
       })
 
-      
-      console.log(data)
-
       setPlace('')
       setSpent('')
       setPurchaseDate('')
-
     }
 
+    useEffect(() => {
+      if (!Auth.loggedIn()) {
+        alert('You must be logged in to use this function!');
+        window.location.href = '/login';
+      }
+    }, []);
 
     return (
       <>
       <Ledger />
         <div className="receipt">
             <form id= "receipt-form" onSubmit={handleSubmit}>
-            <label>Date</label>
+            <label>Date: </label>
                     <input
                     name="purchaseDate"
                     value={purchaseDate}
                     type="date"
-                    onChange={e => setPurchaseDate(e.target.value)}
+                    onChange={e => {setPurchaseDate(e.target.value)
+                    console.log(e.target.value)
+                    }}
                     placeholder={moment().format('MM/DD/YYYY')}
                     />
-                <label>Location</label>
+                <label>Location: </label>
                     <input
                     name="place"
                     value={place}
                     onChange={e => setPlace(e.target.value)}
                     placeholder= "location"
                     />
-                <label>Amount Spent</label>
+                <label>Spent: </label>
                     <input
                     name="spent"
                     value={spent}
