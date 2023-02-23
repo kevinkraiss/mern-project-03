@@ -43,7 +43,8 @@ const Ledger = props => {
                         <Tr
                         key={receipt._id}
                         >
-                            <Td>{moment(receipt.purchaseDate, 'x').format("MM/DD/YYYY")}</Td>
+                            <Td>{
+                            moment((receipt.purchaseDate), 'x').add(6, 'h').format("MM/DD/YYYY")}</Td>
                             <Td>{receipt.place}</Td>
                             <Td isNumeric
                                 className='spent'
