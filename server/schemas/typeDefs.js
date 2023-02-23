@@ -51,6 +51,10 @@ const typeDefs = `
             place: String!
         ): Receipt
 
+        deleteReceipt(
+            _id:ID!
+        ): Receipt
+
         addUser(
             username: String!
             email: String!
