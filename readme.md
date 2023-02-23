@@ -19,6 +19,9 @@ run the following commands in your terminal
 2. Log In
 3. Go to "USER page"
 4. Start tracking your spending!
+
+<!-- SCREENSHOT /  link -->
+
 # Credits
 
 This project uses built using the following resources: 
