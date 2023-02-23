@@ -9,7 +9,7 @@ const API = {
       method: "GET",
      
       headers: {
-        "X-RapidAPI-Key": `${process.env.REACT_APP_TRIPADVISOR_API_KEY}`,  //process.env.TRIPADVISOR_API_KEY
+        "X-RapidAPI-Key": "4ee0d901admshe3bebd1c2e64099p1f8863jsn503dab36a116",  //process.env.TRIPADVISOR_API_KEY
         "X-RapidAPI-Host": "tripadvisor16.p.rapidapi.com",
       },
     };
