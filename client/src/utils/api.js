@@ -23,24 +23,28 @@ const API = {
         
       })
       
-      const restaurants=[]
+      let restaurants=[]
       
       for (const loc of response.data.data){
-       
-
+        
+        
+        
+        
         const locResponse=await axios({
           ...options,
           url: 'https://tripadvisor16.p.rapidapi.com/api/v1/restaurant/searchRestaurants',
           params:{
-
+            
             locationId: loc.locationId
           }
         })
-       
+        
         for(const restaurant of locResponse.data.data.data){
           restaurants.push(restaurant)
+          
         }
       }
+      restaurants.splice(4)//limit results shown
      return restaurants
     }catch(err){
       console.log(err)

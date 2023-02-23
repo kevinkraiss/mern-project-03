@@ -42,7 +42,7 @@ const Home = props => {
 }
 
   return (
-    <Container className="mt-2">
+    <Container className="mt-1">
 
     <div className="container">
       <div className ="row">

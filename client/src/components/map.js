@@ -31,7 +31,7 @@ const Maps =({cityName, setCityName})=>{
 
 <>
 
-    <div className="card mb-2">
+    <div className="card mb-1">
          {cityName}
         <div className="card-header">VITTLES WISCONSIN</div>
         {map}
