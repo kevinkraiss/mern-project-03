@@ -31,9 +31,11 @@ class AuthService {
   
   login(token) {
     localStorage.setItem(lsKey, token)
-    const decoded = decode(token)
-    const { _id } = decoded?.data
-    window.location.assign(`/`)
+    // const decoded = decode(token)
+    // const { _id } = decoded?.data
+    // window.location.assign(`/user/${_id}`)
+
+
   }
 
   logout() {
