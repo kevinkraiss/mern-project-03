@@ -53,10 +53,14 @@ const resolvers = {
         },
         addReceipt:async (parent, {user, spent, purchaseDate, place}, context, info) => {
             const receipt= await Receipt.create({user, spent, purchaseDate, place})
-
             await User.findByIdAndUpdate(user, { $push: { receipts: receipt._id } })
             return receipt
         },
+        deleteReceipt: async (parent, {_id}, context, info) => {
+            await User.findOneAndUpdate({$in:{ receipts:_id }}, {$pull: { receipts: _id }})
+            const receipt = await Receipt.findByIdAndDelete(_id)
+            return receipt
+        }
     }
 
 }

@@ -14,13 +14,23 @@ export const LOGIN = gql`
 `
 
 export const ADD_RECEIPT = gql `
-mutation ADD_RECEIPT($user: String!,$spent: Float!, $purchaseDate: String!, $place: String!) {
-  addReceipt(user: $user, spent: $spent, purchaseDate: $purchaseDate, place: $place) {
-    _id
-    spent
-    purchaseDate
-    place
+  mutation ADD_RECEIPT($user: String!,$spent: Float!, $purchaseDate: String!, $place: String!) {
+    addReceipt(user: $user, spent: $spent, purchaseDate: $purchaseDate, place: $place) {
+      _id
+      spent
+      purchaseDate
+      place
+    }
   }
-}
+`
 
+export const DELETE_RECEIPT = gql `
+  mutation DELETE_RECEIPT($_id:ID!){
+    deleteReceipt(_id:$_id){
+      _id
+      spent
+      purchaseDate
+      place
+    }
+  }
 `

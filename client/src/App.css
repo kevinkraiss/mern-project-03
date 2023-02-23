@@ -151,6 +151,14 @@ form {
   border-radius: 4px;
 }
 
+.deleteBtn {
+  border: 2px red solid;
+  padding: 3px;
+  background-color: #ab222271;
+  width: auto;
+  border-radius: 4px;
+}
+
 @media screen and (max-width: 950px) {
   #receipt-form {
     flex-direction: column;
