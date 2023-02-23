@@ -36,7 +36,7 @@ const Maps =({cityName, setCityName})=>{
         <div className="card-header">VITTLES WISCONSIN</div>
         {map}
         <img src={map==='RECOMMENDED' ? oshMap2 : oshMap1} className="map" style={{height:"auto"}} />
-        <button style={{marginBottom: "5px", border:"solid",borderRadius:"10px"}}onClick={handleClick}>{buttonText}</button>
+        <button style={{width:"150px",marginBottom: "5px", border:"solid",borderRadius:"10px"}}onClick={handleClick}>{buttonText}</button>
     </div>
 </>
        
