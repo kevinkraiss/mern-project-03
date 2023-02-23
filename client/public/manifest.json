@@ -1,5 +1,5 @@
 {
-  "short_name": "Vittles",
+    "short_name": "Vittles",
   "name": "Vittles: A MERN Stack Budget Tracker",
   "icons": [
     {
@@ -18,8 +18,11 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "orientation": "portrait",
+  "description": "Keep track of your spending habits", 
+  "start_url": "./",
+  "id": "/",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#6a2020",
+  "background_color": "#6a2020"
 }
