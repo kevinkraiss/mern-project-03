@@ -1,6 +1,5 @@
 import './App.css';
 import { ChakraProvider } from '@chakra-ui/react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { ApolloClient, createHttpLink, InMemoryCache, ApolloProvider } from '@apollo/client'
 
 import { setContext } from '@apollo/client/link/context'

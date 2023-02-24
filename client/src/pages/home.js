@@ -1,7 +1,9 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
 
-// import ProfileList from '../components/ProfileList';
+
+import ProfileList from '../components/ProfileList';
+
 import Map from '../components/map'
 // import DropDown from '../components/dropDown'
 // import Api from '../components/api'
