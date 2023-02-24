@@ -20,16 +20,29 @@ import React from 'react';
             
 
     <h1 style={{
+        fontSize:"25px",
         fontWeight:"bold",
-        borderLeft:"solid 5px",
-        borderRight:"solid 5px",
-        color:"#0d6efd",
-        padding:"20px 20px 20px 20px"
+        // borderLeft:"solid 5px",
+        // borderRight:"solid 5px",
+        color:"#851818",
+        padding:"20px 0px 20px 20px"
         }}>
-         VITTLES
+         VITTLES 
         </h1>
+
+        <h1 style={{
+        fontSize:"25px",
+        fontWeight:"bold",
+        // borderLeft:"solid 5px",
+        // borderRight:"solid 5px",
+        color:"#851818",
+        padding:"20px 0px 20px 20px"
+        }}>
+         |
+        </h1>    
            
     <h1  style={{
+        fontSize:"25px",
         fontWeight:"bold",
         padding:"20px"
         }}>

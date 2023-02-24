@@ -2,6 +2,7 @@ import './App.css';
 import { ChakraProvider } from '@chakra-ui/react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { ApolloClient, createHttpLink, InMemoryCache, ApolloProvider } from '@apollo/client'
+
 import { setContext } from '@apollo/client/link/context'
 import { useState } from 'react'
 import Auth from './utils/auth'
@@ -14,7 +15,8 @@ import Page from './components/page'
 import Nav from './components/nav'
 
 // create and import components
-console.log('process.env code:',process.env.REACT_APP_TRIPADVISOR_API_KEY) 
+// console.log(process.env,`${process.env.REACT_APP_TRIPADVISOR_API_KEY}`)
+// console.log('process.env code:',process.env.REACT_APP_TRIPADVISOR_API_KEY) 
 
 const httpLink = createHttpLink({
   uri: '/graphql'

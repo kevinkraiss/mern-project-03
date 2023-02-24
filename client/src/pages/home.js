@@ -18,7 +18,7 @@ import ApiListItem from '../components/apiListItem'
 //////////////////////////////////
 
 const Home = props => {
-  const [searchCity, setSearchCity]= useState('search for restaurants near you!')
+  const [searchCity, setSearchCity]= useState('search nearby restaurants !')
   const [loading,setLoading]=useState(false)
   const [restaurantResults,setRestaurantResults]=useState([])
   

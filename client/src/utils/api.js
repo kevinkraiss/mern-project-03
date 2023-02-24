@@ -1,7 +1,9 @@
 import axios from "axios";
 
+
 //  const TRIPADVISOR_API_KEY="4ee0d901admshe3bebd1c2e64099p1f8863jsn503dab36a116"
-//const TRIPADVISOR_API_KEY
+const APIKey=process.env.React_APP_TRIPADVISOR_API_KEY
+console.log(APIKey)
 
 const API = {
   async searchRestaurants(citySearch) {
@@ -9,7 +11,9 @@ const API = {
       method: "GET",
      
       headers: {
-        "X-RapidAPI-Key": "4ee0d901admshe3bebd1c2e64099p1f8863jsn503dab36a116",  //process.env.TRIPADVISOR_API_KEY
+        "X-RapidAPI-Key": "4ee0d901admshe3bebd1c2e64099p1f8863jsn503dab36a116",
+        
+         //process.env.TRIPADVISOR_API_KEY
         "X-RapidAPI-Host": "tripadvisor16.p.rapidapi.com",
       },
     };
