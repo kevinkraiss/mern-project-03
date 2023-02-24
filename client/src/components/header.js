@@ -1,13 +1,15 @@
 import React from 'react';
 // import headerImage from "../assets/project-3-restaraunt-4.jpg"
-import headerImage from "../assets/milwaukee-wide.jpg"
+ import headerImage from "../assets/very-wide-milwaukee.png"
+ //import headerImage from "../assets/3-milwaukee-skyline-panorama.jpg"
+//import headerImage from "../assets/betterMilwaukeeImage.jpg"
 
 
 
   function Header(props) {
 
     return (
-        <div className="container" style={{backgroundImage:`url(${headerImage})`,height:"150px",backgroundSize:"contain"}}>
+        <div className="container" style={{backgroundImage:`url(${headerImage})`,height:"150px",backgroundSize:"100% 100%"}}>
   
         
   <div style={{
@@ -18,16 +20,29 @@ import headerImage from "../assets/milwaukee-wide.jpg"
             
 
     <h1 style={{
+        fontSize:"25px",
         fontWeight:"bold",
-        borderLeft:"solid 5px",
-        borderRight:"solid 5px",
-        color:"#0d6efd",
-        padding:"20px 20px 20px 20px"
+        // borderLeft:"solid 5px",
+        // borderRight:"solid 5px",
+        color:"#851818",
+        padding:"20px 0px 20px 20px"
         }}>
-         VITTLES
+         VITTLES 
         </h1>
+
+        <h1 style={{
+        fontSize:"25px",
+        fontWeight:"bold",
+        // borderLeft:"solid 5px",
+        // borderRight:"solid 5px",
+        color:"#851818",
+        padding:"20px 0px 20px 20px"
+        }}>
+         |
+        </h1>    
            
     <h1  style={{
+        fontSize:"25px",
         fontWeight:"bold",
         padding:"20px"
         }}>

@@ -1,71 +1,45 @@
 import { useState,useEffect } from 'react'
 import React from 'react';
 
-
 import oshMap1 from '../assets/oshkosh-map-1.jpg';
 import oshMap2 from '../assets/oshkosh-map-2.jpg'
-    
-   
-function Maps(){
-    // const[map, setMap]=useState(`(${oshMap1})`)
-     const[map, setMap]=useState('popular')
 
-    //     const dataSource = [
-    //         \client\src\assets\oshkosh-map-1.jpg
+const Maps =({cityName, setCityName})=>{
+    // console.log()
     
-    //         client\src\assets\oshkosh-map-2.jpg
-    
-    //         /////OR???
-    //         {oshMap1} {oshMap2}
-    // ];
-    // const [allMaps]=useState([
+    const[map, setMap]=useState('RECENTLY VISITED')
+    const[buttonText, setButtonText]=useState('SEE RECOMMENDED')
+    ///////////////////////////////
+    const [data,setData]=useState('')
 
-    //     {
-    //         id:0,
-    //         mapName: "Oshkosh Places Visited ",
-    //         image: oshMap1,
-    //         alt:"city map of oshkosh",
-    //         text:"ESTABLISMENTS YOU'VE VISITED",
-    //         },
-    //     {
-    //         id:1,
-    //         appName: "Oshkosh places recommended",
-    //         image: oshMap2,
-    //         alt:"city map of oshkosh",
-    //         text:"ESTABLISHMENTS RECOMMENDED FOR YOU",
-    //        },
-    //     ])
+    const childToParent=()=>{
         
-        const handleClick=event=>{ 
-                if(map==='popular'){
-                    setMap('recommended')
-                }else{
-                    setMap('popular')
-                }
-            {console.log('clicked')}
-            // let file=event.target.files[0]
-            // setMap(`(${oshMap2})`)
+    }
+//////////////////////////////////////////
+     const handleClick=event=>{ 
+        if(map==='RECENT VISITS'){
+            setMap('RECOMMENDED')
+            setButtonText('SEE RECENT VISITS')
+            }else{
+            setMap('RECENT VISITS')
+            setButtonText('SEE RECOMMENDED')
+            }
+           }
 
-        }
         
      return (
-    <div className="card">
-            <div className="card-header">VITTLES OSHKOSH</div>
-                {map}
-            <img src={map==='popular' ? oshMap2 : oshMap1} className="map" style={{height:"250px", width:"250px"}} />
-                {/* <img src={map} className="map" style={{height:"250px", width:"250px"}} /> */}
-           
-                {/* <div className="image" style={{backgroundImage:`url(${oshMap1})`}}></div> */}
-                {/* <img map></img> */}
 
+<>
 
-
-            <button onClick={handleClick}>CHANGE MAP VIEW</button>
-  
+    <div className="card mb-1">
+         {cityName}
+        <div className="card-header">VITTLES WISCONSIN</div>
+        {map}
+        <img src={map==='RECOMMENDED' ? oshMap2 : oshMap1} className="map" style={{height:"auto"}} />
+        <button style={{width:"150px",marginBottom: "5px", border:"solid",borderRadius:"10px"}}onClick={handleClick}>{buttonText}</button>
     </div>
-
-
-
+</>
+       
 )
 }
 

@@ -1,5 +1,6 @@
 import React from 'react';
-import footerImage from "../assets/views-panorama.jpg"
+// import footerImage from "../assets/views-panorama.jpg"
+import footerImage from "../assets/farm-wide.jpg"
 
 function Footer(props) {
 
@@ -7,10 +8,10 @@ function Footer(props) {
 
 
 
-<div className="container fixed-bottom text-center" style={{ display: 'flex', position: 'fixed', padding: 0,  backgroundImage: `url(${footerImage})`,height:"100px"}}>
+<div className="container fixed-bottom text-center" style={{ display: 'flex', position: 'fixed',  backgroundImage: `url(${footerImage})`,height:"150px", backgroundSize:'100% 100%'}}>
 
 
-  <div className="row">
+  <div className="row"  style={{paddingTop:'10px'}}>
     <div className="col">
      <h1 style={{color:"white", fontSize:"25px",paddingTop:"5px"}}>
      VITTLES 2023
@@ -21,16 +22,16 @@ function Footer(props) {
 
 
     <div className="col-3">
-      1 
+       
     </div>
 
     <div className="col-6">
-      2 
+      
 
   <div className="col" style={{
       display:"flex",
       justifyContent:"space-around",
-      // paddingBottom:'10px'
+      paddingBottom:'10px'
     }}>
     <a 
       className="nav-link" 
@@ -58,7 +59,7 @@ function Footer(props) {
     </div>
 </div>
     <div className="col-3">
-      3 
+       
     </div>
 
   </div>
